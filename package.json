@@ -1,0 +1,11 @@
+{
+  "name": "chat_node",
+  "version": "1.0.0",
+  "description": "Client Server Chat App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fernando de Francisco <fdfdev@outlook.com>",
+  "license": "MIT"
+}
