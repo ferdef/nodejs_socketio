@@ -11,8 +11,16 @@ app.get('/hola-mundo', function(req, res) {
     res.status(200).send('Hola mundo desde una ruta');
 });
 
+var messages = [{
+    id: 1,
+    text: 'Bienvenido al chat privado de Socket.IO y NodeJS',
+    nickname: 'Bot - fdfdev@outlook.com'
+}];
+
 io.on('connection', function(socket) {
     console.log("El nodo " + socket.handshake.address + " se ha conectado");
+
+    socket.emit('messages', messages);
 })
 
 server.listen(port, function() {
