@@ -21,7 +21,15 @@ io.on('connection', function(socket) {
     console.log("El nodo " + socket.handshake.address + " se ha conectado");
 
     socket.emit('messages', messages);
-})
+
+    socket.on('add-message', function(data) {
+        messages.push(data);
+        socket.emit('messages', messages);
+    });
+
+});
+
+
 
 server.listen(port, function() {
     console.log('Servidor está funcionando el puerto ' + port);
